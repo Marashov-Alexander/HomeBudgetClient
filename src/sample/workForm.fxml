@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane fx:id="workTabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="930.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.WorkFormController">
+  <tabs>
+    <Tab fx:id="operationsTab" onSelectionChanged="#onTabSelected" text="Operations">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="operationsTable" layoutX="24.0" layoutY="78.0" prefHeight="365.0" prefWidth="882.0">
+                    <columns>
+                      <TableColumn fx:id="opsIdCol" editable="false" prefWidth="36.0" resizable="false" text="ID" />
+                      <TableColumn fx:id="opsArticleCol" editable="false" prefWidth="107.0" resizable="false" text="ARTICLE" />
+                        <TableColumn fx:id="opsDebitCol" editable="false" prefWidth="87.0" resizable="false" text="DEBIT" />
+                        <TableColumn fx:id="opsCreditCol" editable="false" prefWidth="117.0" resizable="false" text="CREDIT" />
+                        <TableColumn fx:id="opsCreatedCol" editable="false" prefWidth="190.0" resizable="false" text="CREATE_DATE" />
+                        <TableColumn fx:id="opsBalanceCol" editable="false" prefWidth="104.0" resizable="false" text="BALANCE" />
+                        <TableColumn fx:id="updateOpsCol" editable="false" prefWidth="128.0" resizable="false" sortable="false" text="UPDATE" />
+                        <TableColumn fx:id="removeOpsCol" editable="false" prefWidth="96.0" resizable="false" sortable="false" text="REMOVE" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="createOperationBtn" layoutX="25.0" layoutY="44.0" mnemonicParsing="false" onAction="#onCreateOperationClick" prefHeight="25.0" prefWidth="108.0" text="Create operation" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="articlesTab" onSelectionChanged="#onTabSelected" text="Articles">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TableView id="articlesTable" fx:id="articlesTable" layoutX="29.0" layoutY="81.0" prefHeight="363.0" prefWidth="873.0">
+                    <columns>
+                      <TableColumn fx:id="articleIdCol" editable="false" maxWidth="150.0" minWidth="75.0" prefWidth="75.0" resizable="false" text="ID" />
+                      <TableColumn fx:id="articleNameCol" editable="false" maxWidth="500.0" minWidth="100.0" prefWidth="434.0" resizable="false" text="NAME" />
+                        <TableColumn fx:id="updateArticleCol" editable="false" prefWidth="186.0" resizable="false" sortable="false" text="UPDATE" />
+                        <TableColumn fx:id="removeArticleCol" editable="false" prefWidth="169.0" resizable="false" sortable="false" text="REMOVE" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="createArticleBtn" layoutX="29.0" layoutY="44.0" mnemonicParsing="false" onAction="#onCreateArticleClicked" prefHeight="19.0" prefWidth="103.0" text="Create article" />
+               </children>
+            </AnchorPane>
+         </content></Tab>
+      <Tab fx:id="balancesTab" onSelectionChanged="#onTabSelected" text="Balances">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="balancesTable" layoutX="33.0" layoutY="84.0" prefHeight="360.0" prefWidth="869.0">
+                    <columns>
+                      <TableColumn fx:id="balanceIdCol" editable="false" prefWidth="60.0" resizable="false" text="ID" />
+                      <TableColumn fx:id="balanceCreateDateCol" editable="false" prefWidth="208.0" resizable="false" text="CREATE DATE" />
+                        <TableColumn fx:id="balanceDebitCol" editable="false" prefWidth="100.0" resizable="false" text="DEBIT" />
+                        <TableColumn fx:id="balanceCreditCol" editable="false" prefWidth="109.0" resizable="false" text="CREDIT" />
+                        <TableColumn fx:id="balanceAmountCol" editable="false" prefWidth="128.0" resizable="false" text="AMOUNT" />
+                        <TableColumn fx:id="monthCol" editable="false" prefWidth="72.0" resizable="false" text="MONTH" />
+                        <TableColumn fx:id="yearCol" editable="false" prefWidth="98.0" resizable="false" text="YEAR" />
+                        <TableColumn fx:id="removeBalanceCol" editable="false" prefWidth="88.0" resizable="false" sortable="false" text="DISBAND" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="33.0" layoutY="45.0" mnemonicParsing="false" onAction="#onCreateBalanceClicked" prefHeight="25.0" prefWidth="110.0" text="Create ballance" />
+                  <Button layoutX="164.0" layoutY="45.0" mnemonicParsing="false" onAction="#onAnalisisClicked1" prefHeight="25.0" prefWidth="130.0" text="Percentage analysis" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
